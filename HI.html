@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Random Number App</title>
+</head>
+
+<body>
+
+  <h1>random Number APP</h1>
+
+  <div id="number">0</div>
+
+  <button onclick="toggleRandom()">Click NOT Me</button>
+
+  <script>
+    let count = 0;
+    let interval;
+
+   function startRandom() {
+  interval = setInterval(function () {
+    document.getElementById("number").innerHTML =
+      Math.floor(Math.random() * 100);
+  }, 200);
+}
+
+    function stopRandom() {
+      clearInterval(interval);
+    }
+
+    function toggleRandom() {
+  count++;
+
+  if (count % 2 == 0)
+    startRandom();
+  else
+    stopRandom();
+}
+    startRandom();
+  </script>
+
+</body>
+</html>
